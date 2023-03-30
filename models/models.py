@@ -2,7 +2,6 @@ from pydantic import BaseModel
 from typing import List, Optional
 from enum import Enum
 
-
 class Source(str, Enum):
     email = "email"
     file = "file"
@@ -13,10 +12,11 @@ class DocumentMetadata(BaseModel):
     source: Optional[Source] = None
     source_id: Optional[str] = None
     url: Optional[str] = None
-    created_at: Optional[str] = None
-    author: Optional[str] = None
-
-
+    title: Optional[str] = None
+    description: Optional[str] = None
+    tagLine: Optional[str] = None
+    priceFrom: Optional[str] 
+    
 class DocumentChunkMetadata(DocumentMetadata):
     document_id: Optional[str] = None
 
