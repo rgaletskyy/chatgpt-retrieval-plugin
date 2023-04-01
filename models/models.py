@@ -10,12 +10,14 @@ class Source(str, Enum):
 
 
 class DocumentMetadata(BaseModel):
-    source: Optional[Source] = None
-    source_id: Optional[str] = None
-    url: Optional[str] = None
-    created_at: Optional[str] = None
-    author: Optional[str] = None
-
+    document_id: Optional[str] = None   
+    price_from: Optional[Decimal] = None
+    product_url: Optional[str] = None
+    title: Optional[str] = None
+    tag_line: Optional[str] = None
+    short_description: Optional[str] = None
+    description: Optional[str] = None
+    country: Optional[str] = None
 
 class DocumentChunkMetadata(DocumentMetadata):
     document_id: Optional[str] = None
@@ -43,12 +45,14 @@ class DocumentWithChunks(Document):
 
 
 class DocumentMetadataFilter(BaseModel):
-    document_id: Optional[str] = None
-    source: Optional[Source] = None
-    source_id: Optional[str] = None
-    author: Optional[str] = None
-    start_date: Optional[str] = None  # any date string format
-    end_date: Optional[str] = None  # any date string format
+    document_id: Optional[str] = None   
+    price_from: Optional[Decimal] = None
+    product_url: Optional[str] = None
+    title: Optional[str] = None
+    tag_line: Optional[str] = None
+    short_description: Optional[str] = None
+    description: Optional[str] = None
+    country: Optional[str] = None
 
 
 class Query(BaseModel):
